@@ -50,7 +50,7 @@ You can also finish timing process in a callback.
 
 Use reset() to reset the KeyTimer. All results and remaining processes will be cleared.
 
-**MarkTimer**'s timing processes will be fabricated in a tree. The mark can reuse because is not considered as key.
+**MarkTimer**'s timing processes will be fabricated in a tree. The mark can be reused because it is not considered as a key.
 
     var mt = timer.newMarkTimer();
     
