@@ -79,7 +79,7 @@ Total: 0
 
 You must close all 'start's before you call total(), text() and html().
 
-You should also not use stop() if there is no 'start' is begun.
+You should also not use stop() if there is no 'start' begun.
 
     var mt = timer.newMarkTimer();
     
