@@ -26,7 +26,7 @@ You can get the time of a timing-process at any time if it is finished.
     /* code block */
     kt.getTime('a key name');
 
-KeyTimer also can output report in text or in html. The timing processes can be out of order.
+KeyTimer also can output report in text or in html. The timing processes can be executed out of order, but in report they will be ordered by begin time.
 
     var kt = timer.newKeyTimer();
     kt.time(1);
@@ -48,7 +48,7 @@ You can also finish timing process in a callback.
       kt.text();
     }, 4000);
 
-Use reset() to reset the KeyTimer. All results and remaining processes will be clear.
+Use reset() to reset the KeyTimer. All results and remaining processes will be cleared.
 
 **MarkTimer**'s timing processes will be fabricated in a tree. The mark can reuse because is not considered as key.
 
@@ -170,4 +170,4 @@ MarkTimer also can output report in text or in html.
     mt.text();
     mt.html();
 
-Use reset() to reset the MarkTimer. All results and remaining processes will be clear.
+Use reset() to reset the MarkTimer. All results and remaining processes will be cleared.
