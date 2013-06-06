@@ -2,7 +2,7 @@ A performance analysis tool especially useful for IE6/IE7.
 
 ##Usage:
 
-When importing timer.js into page, make sure there is no other js file is using the namespace of **timer**.
+When importing timer.js into page, make sure there is no other js file which is using the namespace of **timer**.
  
 There are two types of timers: KeyTimer and MarkTimer. Both timers will not block origin process.
 
@@ -169,5 +169,6 @@ MarkTimer also can output report in text or in html.
 
     mt.text();
     mt.html();
+    mt.query('a loop|Loop 51');
 
 Use reset() to reset the MarkTimer. All results and remaining processes will be cleared.
