@@ -6,7 +6,7 @@
 
 (function(context){
   if (context.timer) {
-    throw Error('timer is existing or timer module has been loaded.');
+    throw new Error('timer is existing or timer module has been loaded.');
   }
   var timer = {
     newKeyTimer: function() {
@@ -16,7 +16,7 @@
         time: function(key) {
           var me = this;
           if (me.timers_[key]) {
-            throw Error(key + ' has been used.');
+            throw new Error(key + ' has been used.');
           }
           me.last_ = me.timers_[key] = {
             key: '' + key,
@@ -27,10 +27,10 @@
         timeEnd: function(key) {
           var t = this.timers_[key];
           if (!t) {
-            throw Error(key + ' has not been started.');
+            throw new Error(key + ' has not been started.');
           }
           if (t.end) {
-            throw Error(key + ' has been stopped.');
+            throw new Error(key + ' has been stopped.');
           }
           t.end = +new Date();
           return t.end - t.begin;
@@ -90,10 +90,10 @@
         stop: function(mark) {
           var me = this;
           if (!me.p_) {
-            throw Error('There is no "start" before this "stop".');
+            throw new Error('There is no "start" before this "stop".');
           }
           if (me.p_.mark !== '' + mark) {
-            throw Error('Mark not matched.');
+            throw new Error('Mark not matched.');
           }
           me.p_.end = +new Date();
           me.p_ = me.p_.parent_;
@@ -107,7 +107,7 @@
         total: function() {
           var me = this;
           if (me.p_) {
-            throw Error('There are some unfinished "start".');
+            throw new Error('There are some unfinished "start".');
           }
           var total = 0;
           for (var i = 0, length = me.root.length; i < length; i++) {
