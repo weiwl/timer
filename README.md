@@ -115,7 +115,7 @@ Use getCurrentMark() to know where current timing-process is.
 
     mt.getCurrentMark(); // level2
 
-It is not recommended to stop a timing-process in another asynchronous callback. It might throw timing-process into confusion.
+It is **not recommended** to stop a timing-process in another asynchronous callback. It might throw timing-process into confusion.
 
     var mt = timer.newMarkTimer();
     mt.start('level1');
@@ -124,9 +124,10 @@ It is not recommended to stop a timing-process in another asynchronous callback.
       mt.stop('level2');
     }, 4000);
 
-    /*some code may cost more than 4 second*/
+    /*some codes which may cost more than 4 seconds*/
+    for(var s = +new Date() + 5000; s > +new Date();){}
 
-    mt.stop('level1');
+    mt.stop('level1'); // stopping of level1 still might be called before level2
 
 You can query a timing-process by it's path.
 
