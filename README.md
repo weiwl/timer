@@ -26,7 +26,7 @@ You can get the time of a timing-process at any time if it is finished.
     /* code block */
     kt.getTime('a key name');
 
-KeyTimer also can output report in text or in html. The timing processes can be executed out of order, but in report they will be ordered by begin time.
+KeyTimer can output report in text or in html. The timing processes can be executed out of order, but in report they will be ordered by begin time.
 
     var kt = timer.newKeyTimer();
     kt.time(1);
@@ -153,7 +153,7 @@ You can query a timing-process by it's path.
     mt.stop('level1');
 
     mt.query('level1');
-    mt.query('level1:0'); // same with above. Index is 0-base
+    mt.query('level1:0'); // same with above. Index is 0-based
 
     mt.query('level1:2|level2:1|level3');
 
