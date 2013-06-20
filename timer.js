@@ -154,8 +154,7 @@
           var arr = str.split('|');
           var found = this.root;
           for (var i = 0, length = arr.length; i < length; i++) {
-            found = this.queryChild_(found, arr[i]);
-            if (!found) {
+            if (!(found = this.queryChild_(found, arr[i]))) {
               break;
             }
           }
